@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
+import classes from './CardList.module.css';
+import { Row, Col } from 'react-bootstrap'
 
 export default class CardList extends React.Component {
     render() {
         return (
-            <div>
-                
-            </div>
+            <Row>
+                <Col md className={classes.Test}></Col>
+                <Col md className={classes.Test}></Col>
+            </Row>
         )
     }
 }

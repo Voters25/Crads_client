@@ -1,26 +1,54 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Container, Row, Col } from 'react-bootstrap';
+import { Route } from 'react-router-dom';
+import NavBarContainer from './Components/NavBar/NavBarContainer';
+import CardListContainer from './Components/CardsList/CardListContainer';
+import CardContainer from './Components/Card/CardContainer';
+
+//import { Grid, Row, Col } from 'react-bootstrap';
+//import * as BootstrapComponents from 'react-bootstrap';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Wripper"> 
+      <NavBarContainer />
+      <div className="h-1000"></div>
+      <Container fluid>
+        <Row fluid>
+          <Col>
+              <Route exact path='/' component={CardListContainer} />
+              <Route path='/card' component={CardContainer} />
+          </Col>
+          {/*<Col md className="Test"></Col>*/}
+        </Row>
+      </Container>
     </div>
   );
 }
 
 export default App;
+
+
+
+/*
+
+<Navbar collapseOnSelect expand="md" bg="dark" variant="dark" >
+        <Container>
+          <NavbarToggle aria-controls="responsive-navbar-nav" />
+          <NavbarCollapse id="responsive-navbar-nav" >
+            <Nav className="mr-auto">
+              
+              </Nav>
+              <Form inline>
+                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                <Button variant="outline-info">Search</Button>
+              </Form>
+            </NavbarCollapse>
+          </Container>
+        </Navbar>
+
+*/

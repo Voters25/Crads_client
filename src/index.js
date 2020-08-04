@@ -9,6 +9,8 @@ import history from './history';
 import store from './Redux/redux';
 import { Router } from 'react-router-dom';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 ReactDOM.render(
   <Provider store={store}>

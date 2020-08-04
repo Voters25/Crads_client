@@ -1,5 +1,3 @@
-/* const { combineReducers, createStore, applyMiddleware } = require("redux");
-const { default: thunk } = require("redux-thunk"); */
 
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
