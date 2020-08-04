@@ -2,4 +2,6 @@
     /* background: rgb(80, 94, 99); */
     background: black;
     height: 94.5vh;
+
+    overflow: auto;
   }
