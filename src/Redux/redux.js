@@ -4,13 +4,15 @@ import thunk from "redux-thunk";
 
 import userFormReducer from './userForm-reducer';
 import cardEditReducer from "./cardEdit-reducer copy";
+import cardListReducer from "./cardList-reducer";
 
 
 
 
 let reducers = combineReducers({
     userForm: userFormReducer,
-    cardEdit: cardEditReducer
+    cardEdit: cardEditReducer,
+    cardList: cardListReducer
 });
 
 
