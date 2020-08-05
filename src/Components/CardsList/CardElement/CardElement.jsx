@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 //import classes from './CardList.module.css';
-import { Row, Col, Card } from 'react-bootstrap'
+import { Row, Col, Card, Button } from 'react-bootstrap'
 import CardElementContainer from './CardElementContainer';
 
 export default class CardElement extends React.Component {
@@ -21,9 +21,9 @@ export default class CardElement extends React.Component {
                     </Card.Title>
                     <Card.Text>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptatem adipisci veritatis necessitatibus, voluptas dolorum natus repudiandae autem minus perferendis et, consequuntur iure, saepe earum vitae! Quae iure odio possimus?
-                                    </Card.Text>
-                    <Card.Link href='#'>Edit</Card.Link>
-                    <Card.Link href='#'>Delete</Card.Link>
+                    </Card.Text>
+                    <Button className="mr-3" variant="dark">Open</Button>
+                    <Button className="mr-3" variant="dark">Delete</Button>
                 </Card.Body>
             </Card>
         )

@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import classes from './CardEdit.module.css';
-import { Row, Col, Card, FormGroup, FormControl } from 'react-bootstrap';
+import { Row, Col, Card, FormGroup, FormControl, Button } from 'react-bootstrap';
 
 export default class CardEdit extends React.Component {
     render() {
 
         // ЕСЛИ КЛИКНУЛИ ПО edit ТО ОТРИСОВАТЬ ФОРМУ С ТЕКСТОМ ИЗ КАРТОЧКИ
+
 
         this.newTitleElement = React.createRef();
         this.onChangeCardTitle = () => {
@@ -20,6 +21,17 @@ export default class CardEdit extends React.Component {
             this.props.changeCardText(text);
         }
         console.log(this.props.cardText);
+
+
+        this.editCard = () => {
+            console.log('Edit');
+        }
+        this.saveCard = () => {
+            console.log('Save');
+        }
+        this.deleteCard = () => {
+            console.log('Delete');
+        }
 
 
 
@@ -42,9 +54,9 @@ export default class CardEdit extends React.Component {
                             <FormControl onChange={this.onChangeCardText} ref={this.newTextElement} value={this.props.cardText} aria-describedby></FormControl>
                         </FormGroup>
 
-                        <Card.Link href='#'>Edit</Card.Link>
-                        <Card.Link href='#'>Save</Card.Link>
-                        <Card.Link href='#'>Delete</Card.Link>
+                        <Button onClick={this.editCard} className="mr-3" variant="dark">Edit</Button>
+                        <Button onClick={this.saveCard} className="mr-3" variant="dark">Save</Button>
+                        <Button onClick={this.deleteCard} className="mr-3" variant="dark">Delete</Button>
                     </Card.Body>
                 </Card>
 
@@ -53,9 +65,14 @@ export default class CardEdit extends React.Component {
     }
 }
 
+
+
+
 /*
 
-<Col className={classes.Test} ></Col>
+<Card.Link href='#'>Edit</Card.Link>
+<Card.Link href='#'>Save</Card.Link>
+<Card.Link href='#'>Delete</Card.Link>
 
 */
 
