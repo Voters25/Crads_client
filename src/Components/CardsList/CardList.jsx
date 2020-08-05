@@ -22,7 +22,7 @@ export default class CardList extends React.Component {
                     </Row>
                     <Row>
                         <Col md={12} style={{ background: 'rgb(65, 74, 78)', height: '86.5vh', overflow: 'auto', color: 'white' }}>
-                            Карточки ___ новая карточка центрируется, даже если она дна. Нехорошо!!!
+                        Карточки ___ новая карточка центрируется, даже если она дна. Нехорошо!!!
                             <Row className="justify-content-around ">
 
                                 

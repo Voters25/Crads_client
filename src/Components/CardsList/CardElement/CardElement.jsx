@@ -18,7 +18,7 @@ export default class CardElement extends React.Component {
                 <Card.Body>
                     <Card.Title>
                         Title
-                                    </Card.Title>
+                    </Card.Title>
                     <Card.Text>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptatem adipisci veritatis necessitatibus, voluptas dolorum natus repudiandae autem minus perferendis et, consequuntur iure, saepe earum vitae! Quae iure odio possimus?
                                     </Card.Text>
