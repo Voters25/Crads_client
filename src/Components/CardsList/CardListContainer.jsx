@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Card from './CardList';
+import CardList from './CardList';
 
 
 const mapStateToProps = (state) => {
@@ -10,6 +10,6 @@ const mapDispatchToProps = (dispatch) => {
     
 }
 
-const CardListContainer = connect(mapStateToProps, mapDispatchToProps)(Card);
+const CardListContainer = connect(mapStateToProps, mapDispatchToProps)(CardList);
 
 export default CardListContainer;

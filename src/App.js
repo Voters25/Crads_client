@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Route } from 'react-router-dom';
 import NavBarContainer from './Components/NavBar/NavBarContainer';
 import CardListContainer from './Components/CardsList/CardListContainer';
-import CardContainer from './Components/Card/CardContainer';
+import CardEditContainer from './Components/Card/CardEditContainer';
 
 //import { Grid, Row, Col } from 'react-bootstrap';
 //import * as BootstrapComponents from 'react-bootstrap';
@@ -21,7 +21,7 @@ function App() {
         <Row fluid>
           <Col>
               <Route exact path='/' component={CardListContainer} />
-              <Route path='/card' component={CardContainer} />
+              <Route path='/card' component={CardEditContainer} />
           </Col>
           {/*<Col md className="Test"></Col>*/}
         </Row>
