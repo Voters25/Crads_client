@@ -4,13 +4,14 @@ import { Row, Col, Card, Button } from 'react-bootstrap'
 import CardElementContainer from './CardElementContainer';
 
 export default class CardElement extends React.Component {
+
     render() {
 
 
-
-
-
-        // Навесь onClick на карточки, для их открытия.
+        let onOpenCard = () => {
+            let id = this.props.id;
+            this.props.openThisCard(id);
+        }
 
 
         return (
@@ -22,7 +23,7 @@ export default class CardElement extends React.Component {
                     <Card.Text className={classes.text} >
                         {this.props.content}
                     </Card.Text>
-                    <Button className="mr-3" variant="dark">Open</Button>
+                    <Button onClick={onOpenCard} className="mr-3" variant="dark">Open</Button>
                     <Button className="mr-3" variant="dark">Delete</Button>
                 </Card.Body>
             </Card>

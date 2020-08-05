@@ -11,6 +11,8 @@ export default class CardList extends React.Component {
     } */
 
     render() {
+        console.log(this.props.cardText);
+        console.log(this.props.cardTitle);
 
         this.getList = async () => {
             await this.props.getCardList();
@@ -19,7 +21,7 @@ export default class CardList extends React.Component {
         
 
         this.cardElements = this.props.cardList
-        .map((e => <CardElement key={e._id} title={e.Title} content={e.Content} id={e._id} /> ))
+        .map((e => <CardElement key={e._id} title={e.Title} content={e.Content} id={e._id} openThisCard={this.props.openThisCard} /> ))
 
 
         // Навесь onClick на карточки, для их открытия.

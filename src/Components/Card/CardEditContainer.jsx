@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import CardEdit from './CardEdit';
-import { updateNewCardText, updateNewCardTitle } from '../../Redux/cardEdit-reducer copy';
+import { updateNewCardText, updateNewCardTitle } from '../../Redux/cardEdit-reducer';
 
 
 const mapStateToProps = (state) => {

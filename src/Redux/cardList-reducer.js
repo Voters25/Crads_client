@@ -53,7 +53,6 @@ const getListStarted = () => ({
 
 
 
-
 let changeCardList = (result) => {
     return {
         type: 'CHANGE-CARD-LIST',

@@ -3,7 +3,7 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 import userFormReducer from './userForm-reducer';
-import cardEditReducer from "./cardEdit-reducer copy";
+import cardEditReducer from "./cardEdit-reducer";
 import cardListReducer from "./cardList-reducer";
 
 

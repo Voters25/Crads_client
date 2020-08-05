@@ -5,7 +5,10 @@ import { Row, Col, Card, FormGroup, FormControl, Button } from 'react-bootstrap'
 export default class CardEdit extends React.Component {
     render() {
 
-        // ЕСЛИ КЛИКНУЛИ ПО edit ТО ОТРИСОВАТЬ ФОРМУ С ТЕКСТОМ ИЗ КАРТОЧКИ
+        // НННЕЕЕЕЕ ППААААШШЕЕЕЕТТТТ ПЕРЕАДРЕСАЦИЯ
+
+        console.log(this.props.cardText);
+        console.log(this.props.cardTitle);
 
 
         this.newTitleElement = React.createRef();
@@ -41,14 +44,14 @@ export default class CardEdit extends React.Component {
                 <Card className="mt-4 " style={{ width: '80%', height: '70%', color: 'black' }}>
                     <Card.Body>
                         <Card.Title>
-                            Title
+                            {this.props.cardTitle}
                         </Card.Title>
                         <FormGroup >
                             <FormControl onChange={this.onChangeCardTitle} ref={this.newTitleElement} value={this.props.cardTitle} aria-describedby></FormControl>
                         </FormGroup>
                         
                         <Card.Text>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptatem adipisci veritatis necessitatibus, voluptas dolorum natus repudiandae autem minus perferendis et, consequuntur iure, saepe earum vitae! Quae iure odio possimus?
+                            {this.props.cardText}
                         </Card.Text>
                         <FormGroup >
                             <FormControl onChange={this.onChangeCardText} ref={this.newTextElement} value={this.props.cardText} aria-describedby></FormControl>
