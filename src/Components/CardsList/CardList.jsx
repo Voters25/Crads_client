@@ -5,6 +5,14 @@ import CardListContainer from './CardListContainer';
 
 export default class CardList extends React.Component {
     render() {
+
+
+
+
+
+        // Навесь onClick на карточки, для их открытия.
+
+
         return (
             <Row>
                 <Col  className={classes.Test}>
@@ -12,10 +20,10 @@ export default class CardList extends React.Component {
                         <Col md style={{ background: 'yellow', height: '8vh' }}>ТЕГИ</Col>
                     </Row>
                     <Row>
-                        <Col md={12}  style={{ background: 'rgb(65, 74, 78)', height: '86.5vh', color: 'white' }}>
-                            Карточки
-                                <Row className="justify-content-center">
-                                <Card className="ml-3 mr-3" style={{ width: '18rem', color: 'black' }}>
+                        <Col md={12} style={{ background: 'rgb(65, 74, 78)', height: '86.5vh', color: 'white' }}>
+                            Карточки ___ новая карточка центрируется, даже если она дна. Нехорошо!!!
+                                <Row className="justify-content-around flex-nowrap">
+                                <Card className="mt-3 mr-3 ml-3"  style={{ width: '19rem', color: 'black' }}>
                                     <Card.Body>
                                         <Card.Title>
                                             Title
@@ -23,13 +31,13 @@ export default class CardList extends React.Component {
                                         <Card.Text>
                                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptatem adipisci veritatis necessitatibus, voluptas dolorum natus repudiandae autem minus perferendis et, consequuntur iure, saepe earum vitae! Quae iure odio possimus?
                                     </Card.Text>
-                                        <Card.Link href='#'>Link</Card.Link>
-                                        <Card.Link href='#'>Link</Card.Link>
+                                        <Card.Link href='#'>Edit</Card.Link>
+                                        <Card.Link href='#'>Delete</Card.Link>
                                     </Card.Body>
                                 </Card>
 
 
-                                <Card className="ml-3 mr-3" style={{ width: '18rem', color: 'black' }}>
+                                <Card className="mt-3 mr-3 ml-3" style={{ width: '19rem', color: 'black' }}>
                                     <Card.Body>
                                         <Card.Title>
                                             Title
@@ -37,13 +45,13 @@ export default class CardList extends React.Component {
                                         <Card.Text>
                                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptatem adipisci veritatis necessitatibus, voluptas dolorum natus repudiandae autem minus perferendis et, consequuntur iure, saepe earum vitae! Quae iure odio possimus?
                                     </Card.Text>
-                                        <Card.Link href='#'>Link</Card.Link>
-                                        <Card.Link href='#'>Link</Card.Link>
+                                        <Card.Link href='#'>Edit</Card.Link>
+                                        <Card.Link href='#'>Delete</Card.Link>
                                     </Card.Body>
                                 </Card>
 
 
-                                <Card className="ml-3 mr-3" style={{ width: '18rem', color: 'black' }}>
+                                <Card className="mt-3 mr-3 ml-3" style={{ width: '19rem', color: 'black' }}>
                                     <Card.Body>
                                         <Card.Title>
                                             Title
@@ -51,12 +59,13 @@ export default class CardList extends React.Component {
                                         <Card.Text>
                                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptatem adipisci veritatis necessitatibus, voluptas dolorum natus repudiandae autem minus perferendis et, consequuntur iure, saepe earum vitae! Quae iure odio possimus?
                                     </Card.Text>
-                                        <Card.Link href='#'>Link</Card.Link>
-                                        <Card.Link href='#'>Link</Card.Link>
+                                        <Card.Link href='#'>Edit</Card.Link>
+                                        <Card.Link href='#'>Delete</Card.Link>
                                     </Card.Body>
                                 </Card>
 
-                                <Card className="ml-3 mr-3" style={{ width: '18rem', color: 'black' }}>
+
+                                <Card className="mt-3 mr-3 ml-3" style={{ width: '19rem', color: 'black' }}>
                                     <Card.Body>
                                         <Card.Title>
                                             Title
@@ -64,11 +73,13 @@ export default class CardList extends React.Component {
                                         <Card.Text>
                                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptatem adipisci veritatis necessitatibus, voluptas dolorum natus repudiandae autem minus perferendis et, consequuntur iure, saepe earum vitae! Quae iure odio possimus?
                                     </Card.Text>
-                                        <Card.Link href='#'>Link</Card.Link>
-                                        <Card.Link href='#'>Link</Card.Link>
+                                        <Card.Link href='#'>Edit</Card.Link>
+                                        <Card.Link href='#'>Delete</Card.Link>
                                     </Card.Body>
                                 </Card>
 
+
+                                
                             </Row>
                         </Col>
                     </Row>
@@ -77,3 +88,6 @@ export default class CardList extends React.Component {
         )
     }
 }
+
+
+// className="justify-content-center"
