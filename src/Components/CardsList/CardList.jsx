@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import classes from './CardList.module.css';
 import { Row, Col, Card, Button } from 'react-bootstrap'
 import CardElementContainer from './CardElement/CardElementContainer';
-//import CardElement from './CardElement/CardElement';
+import CardElement from './CardElement/CardElement';
 
 export default class CardList extends React.Component {
 
@@ -13,14 +13,16 @@ export default class CardList extends React.Component {
     render() {
 
         this.getList = async () => {
-            this.props.getCardList();
+            await this.props.getCardList();
             console.log(this.props.cardList); // Чёт приходит не сразу...
         }
         
 
+        this.cardElements = this.props.cardList
+        .map((e => <CardElement key={e._id} title={e.Title} content={e.Content} id={e._id} /> ))
+
 
         // Навесь onClick на карточки, для их открытия.
-
 
         return (
             <Row>
@@ -32,14 +34,9 @@ export default class CardList extends React.Component {
                         <Col md={12} style={{ background: 'rgb(65, 74, 78)', height: '86.5vh', overflow: 'auto', color: 'white' }}>
                             <Button className="mt-3 mb-1 ml-2">+ New Card</Button>
                             <Button onClick={this.getList} className="mt-3 mb-1 ml-2">ВРЕМЯНКА ОБНОВИТЬ СПИСОК</Button>
-                            <Row className="justify-content-around ">
+                            <Row className="justify-content-around " style={{ overflow: 'hidden', height: '35rem' }} >
 
-                                
-                                <CardElementContainer />
-                                <CardElementContainer />
-                                <CardElementContainer />
-                                <CardElementContainer />
-
+                                {this.cardElements}
                                 
                             </Row>
                         </Col>
@@ -50,7 +47,9 @@ export default class CardList extends React.Component {
     }
 }
 
+// <CardElementContainer />
+
+
 
 // className="justify-content-center"
-
 // className="flex-md-nowrap"
