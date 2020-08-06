@@ -3,6 +3,7 @@ import classes from './CardList.module.css';
 import { Row, Col, Card, Button } from 'react-bootstrap'
 import CardElementContainer from './CardElement/CardElementContainer';
 import CardElement from './CardElement/CardElement';
+import { Link } from 'react-router-dom';
 
 export default class CardList extends React.Component {
 
@@ -17,6 +18,11 @@ export default class CardList extends React.Component {
         this.getList = async () => {
             await this.props.getCardList();
             console.log(this.props.cardList); // Чёт приходит не сразу...
+        }
+
+        this.openThisCardTest = () => {
+            let id = "5f2adcc997f04a14a0afb5aa";
+            this.props.openThisCard(id);
         }
         
 
@@ -36,6 +42,8 @@ export default class CardList extends React.Component {
                         <Col md={12} style={{ background: 'rgb(65, 74, 78)', height: '86.5vh', overflow: 'auto', color: 'white' }}>
                             <Button className="mt-3 mb-1 ml-2">+ New Card</Button>
                             <Button onClick={this.getList} className="mt-3 mb-1 ml-2">ВРЕМЯНКА ОБНОВИТЬ СПИСОК</Button>
+                            <Button onClick={this.openThisCardTest} className="mt-3 mb-1 ml-2">Получить карточку</Button>
+                            <Link to="/card" >1111111111</Link>
                             <Row className="justify-content-around " style={{ overflow: 'hidden', height: '35rem' }} >
 
                                 {this.cardElements}

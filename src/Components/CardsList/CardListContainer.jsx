@@ -1,7 +1,8 @@
 import { connect } from 'react-redux'
 import CardList from './CardList';
 import { getList } from '../../Redux/cardList-reducer';
-import { getCard } from '../../Redux/cardEdit-reducer';
+//import { getCard } from '../../Redux/cardEdit-reducer';
+import { getCard } from '../../Redux/cardList-reducer';
 
 
 const mapStateToProps = (state) => {

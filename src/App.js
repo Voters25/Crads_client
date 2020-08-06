@@ -2,10 +2,11 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import NavBarContainer from './Components/NavBar/NavBarContainer';
 import CardListContainer from './Components/CardsList/CardListContainer';
 import CardEditContainer from './Components/Card/CardEditContainer';
+import UserFormContainer from './Components/UserForm/UserFormContainer';
 
 //import { Grid, Row, Col } from 'react-bootstrap';
 //import * as BootstrapComponents from 'react-bootstrap';
@@ -14,23 +15,56 @@ import CardEditContainer from './Components/Card/CardEditContainer';
 
 function App() {
   return (
-    <div className="Wripper"> 
+
+    <div className="Wripper">
       <NavBarContainer />
       <div className="h-1000"></div>
       <Container fluid>
         <Row fluid>
           <Col>
-              <Route exact path='/' component={CardListContainer} />
-              <Route path='/card' component={CardEditContainer} />
+            <Route exact path='/' component={CardListContainer} />
+            <Route path='/card' component={CardEditContainer} />
           </Col>
-          {/*<Col md className="Test"></Col>*/}
+          
         </Row>
       </Container>
     </div>
+
   );
 }
 
 export default App;
+
+
+
+
+/*
+
+<div className="Wripper"> 
+      <NavBarContainer />
+      <div className="h-1000"></div>
+      <Container fluid>
+        <Row fluid>
+          <Col>
+          <div>
+              <Route exact path='/' component={CardListContainer} />
+              <Route path='/card' component={UserFormContainer} />
+          </div>
+          </Col>
+
+          </Row>
+          </Container>
+        </div>
+
+*/
+
+
+
+
+
+
+
+
 
 
 

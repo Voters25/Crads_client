@@ -39,45 +39,10 @@ const cardEditReducer = (state = initialState, action) => {
 
 
 
-/*===================================================================================*/
-// Get Card
-
-export const getCard = (id) => {
-    return dispatch => {
-        dispatch(getCardStarted());
-
-
-        fetch(`http://localhost:5000/card/${id}`, {
-            credentials: "include"
-        })
-            .then(res => res.json())
-            .then(result => {
-                console.log(result);
-
-                //dispatch(zeroingCardContent());
-                dispatch(changeCardContent(result));
-                callForwarding();
-
-                // НННЕЕЕЕЕ ППААААШШЕЕЕЕТТТТ ПЕРЕАДРЕСАЦИЯ. Компонента не отрисовывается. Только при релоуде страницы (но без стэйта)
-                // FIX ME
-
-            }).catch(err => console.log(err))
-    }
-}
-
-const getCardStarted = () => ({
-    type: GET_STARTED
-});
 
 
 
-/*===================================================================================*/
-
-const callForwarding = () => {
-    history.push('/card');
-}
-
-let changeCardContent = (result) => {
+export let changeCardContent = (result) => {
     return {
         type: 'CHANGE-CARD-CONTENT',
         newTitle: result.Title,

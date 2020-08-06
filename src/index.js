@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 
 import history from './history';
 import store from './Redux/redux';
-import { Router } from 'react-router-dom';
+import { Router, Route, BrowserRouter } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -25,3 +25,14 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+
+/*
+
+<Provider store={store}>
+    <Router history={history}>
+      <App />
+    </Router>
+  </Provider>
+
+*/
