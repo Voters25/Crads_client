@@ -90,8 +90,7 @@ const getCardStarted = () => ({
 /*===================================================================================*/
 
 const callForwarding = () => {
-    //history.push('/card');
-    
+    history.push('/card');
 }
 
 
