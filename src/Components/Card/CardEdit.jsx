@@ -5,11 +5,16 @@ import { Row, Col, Card, FormGroup, FormControl, Button } from 'react-bootstrap'
 export default class CardEdit extends React.Component {
     render() {
 
-        // НННЕЕЕЕЕ ППААААШШЕЕЕЕТТТТ ПЕРЕАДРЕСАЦИЯ
+        //console.log(this.props.cardText);
+        //console.log(this.props.cardTitle);
+        let cardTitle = this.props.cardTitle;
+        let cardText = this.props.cardText;
 
-        console.log(this.props.cardText);
-        console.log(this.props.cardTitle);
-
+        let editMode = this.props.editMode;
+        let thisCreatePage = this.props.thisCreatePage;
+        let cardId = this.props.cardId;
+        console.log('This crete page? ' + thisCreatePage);
+        console.log('Id: ' + cardId);
 
         this.newTitleElement = React.createRef();
         this.onChangeCardTitle = () => {
@@ -28,14 +33,24 @@ export default class CardEdit extends React.Component {
 
         this.editCard = () => {
             console.log('Edit');
+            this.props.onEditCard();
         }
-        this.saveCard = () => {
+        this.saveCard = () => { // ПРОТЕСТИ
             console.log('Save');
+            let postFormContent = {cardId, cardTitle, cardText}
+            //console.log(postFormContent);
+            this.props.saveThisCardChanges(postFormContent);
         }
         this.deleteCard = () => {
             console.log('Delete');
+            this.props.deleteThisCard(cardId);
         }
-
+        this.saveNewCard = () => { // НЕ ГОТОВО
+            console.log('Save new card');
+        }
+        this.deleteNewCard = () => { // НЕ ГОТОВО
+            console.log('Delete new card');
+        }
 
 
         return (
@@ -43,23 +58,36 @@ export default class CardEdit extends React.Component {
 
                 <Card className="mt-4 " style={{ width: '80%', height: '70%', color: 'black' }}>
                     <Card.Body>
-                        <Card.Title>
-                            {this.props.cardTitle}
-                        </Card.Title>
-                        <FormGroup >
-                            <FormControl onChange={this.onChangeCardTitle} ref={this.newTitleElement} value={this.props.cardTitle} aria-describedby></FormControl>
-                        </FormGroup>
-                        
-                        <Card.Text>
-                            {this.props.cardText}
-                        </Card.Text>
-                        <FormGroup >
-                            <FormControl onChange={this.onChangeCardText} ref={this.newTextElement} value={this.props.cardText} aria-describedby></FormControl>
-                        </FormGroup>
+                        {editMode ?
+                            <FormGroup >
+                                <FormControl onChange={this.onChangeCardTitle} ref={this.newTitleElement} value={this.props.cardTitle} aria-describedby></FormControl>
+                            </FormGroup>
+                        :
+                            <Card.Title>
+                                {this.props.cardTitle}
+                            </Card.Title>
+                        }
+                        {editMode ?
+                            <FormGroup >
+                                <FormControl onChange={this.onChangeCardText} ref={this.newTextElement} value={this.props.cardText} aria-describedby></FormControl>
+                            </FormGroup>
+                        :
+                            <Card.Text>
+                                {this.props.cardText}
+                            </Card.Text>
+                        }
 
                         <Button onClick={this.editCard} className="mr-3" variant="dark">Edit</Button>
-                        <Button onClick={this.saveCard} className="mr-3" variant="dark">Save</Button>
-                        <Button onClick={this.deleteCard} className="mr-3" variant="dark">Delete</Button>
+                        {thisCreatePage ?
+                            <Button onClick={this.saveNewCard} className="mr-3" variant="dark">Save</Button>
+                        :
+                            <Button onClick={this.saveCard} className="mr-3" variant="dark">Save</Button>
+                        }
+                        {thisCreatePage ?
+                            <Button onClick={this.deleteNewCard} className="mr-3" variant="dark">Delete</Button>
+                        :
+                            <Button onClick={this.deleteCard} className="mr-3" variant="dark">Delete</Button>
+                        }
                     </Card.Body>
                 </Card>
 

@@ -7,10 +7,14 @@ export default class CardElement extends React.Component {
 
     render() {
 
+        let id = this.props.id;
 
         let onOpenCard = () => {
-            let id = this.props.id;
             this.props.openThisCard(id);
+        }
+
+        let onDeleteCard = () => {
+            this.props.deleteThisCard(id);
         }
 
 
@@ -24,7 +28,7 @@ export default class CardElement extends React.Component {
                         {this.props.content}
                     </Card.Text>
                     <Button onClick={onOpenCard} className="mr-3" variant="dark">Open</Button>
-                    <Button className="mr-3" variant="dark">Delete</Button>
+                    <Button onClick={onDeleteCard} className="mr-3" variant="dark">Delete</Button>
                 </Card.Body>
             </Card>
         )

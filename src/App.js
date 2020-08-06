@@ -24,6 +24,7 @@ function App() {
           <Col>
             <Route exact path='/' component={CardListContainer} />
             <Route path='/card' component={CardEditContainer} />
+            {/*<Route path='/create' component={} />*/}
           </Col>
           
         </Row>

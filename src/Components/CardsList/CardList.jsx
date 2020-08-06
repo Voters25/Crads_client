@@ -3,31 +3,27 @@ import classes from './CardList.module.css';
 import { Row, Col, Card, Button } from 'react-bootstrap'
 import CardElementContainer from './CardElement/CardElementContainer';
 import CardElement from './CardElement/CardElement';
-import { Link } from 'react-router-dom';
 
 export default class CardList extends React.Component {
 
-    /* componentDidMount() {
+    componentDidMount() {
         this.props.getCardList();
-    } */
+    }
 
     render() {
-        console.log(this.props.cardText);
-        console.log(this.props.cardTitle);
 
         this.getList = async () => {
             await this.props.getCardList();
             console.log(this.props.cardList); // Чёт приходит не сразу...
         }
 
-        this.openThisCardTest = () => {
-            let id = "5f2adcc997f04a14a0afb5aa";
-            this.props.openThisCard(id);
+        this.newCard = () => {
+            this.props.createNewCard();
         }
         
 
         this.cardElements = this.props.cardList
-        .map((e => <CardElement key={e._id} title={e.Title} content={e.Content} id={e._id} openThisCard={this.props.openThisCard} /> ))
+        .map((e => <CardElement key={e._id} title={e.Title} content={e.Content} id={e._id} openThisCard={this.props.openThisCard} deleteThisCard={this.props.deleteThisCard} /> ))
 
 
         // Навесь onClick на карточки, для их открытия.
@@ -40,10 +36,8 @@ export default class CardList extends React.Component {
                     </Row>
                     <Row>
                         <Col md={12} style={{ background: 'rgb(65, 74, 78)', height: '86.5vh', overflow: 'auto', color: 'white' }}>
-                            <Button className="mt-3 mb-1 ml-2">+ New Card</Button>
-                            <Button onClick={this.getList} className="mt-3 mb-1 ml-2">ВРЕМЯНКА ОБНОВИТЬ СПИСОК</Button>
-                            <Button onClick={this.openThisCardTest} className="mt-3 mb-1 ml-2">Получить карточку</Button>
-                            <Link to="/card" >1111111111</Link>
+                            <Button onClick={this.newCard} className="mt-3 mb-1 ml-2">+ New Card</Button>
+                            <Button onClick={this.getList} className="mt-3 mb-1 ml-2">Update list</Button>
                             <Row className="justify-content-around " style={{ overflow: 'hidden', height: '35rem' }} >
 
                                 {this.cardElements}

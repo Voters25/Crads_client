@@ -1,5 +1,5 @@
 import history from "../history";
-import { changeCardContent } from './cardEdit-reducer'
+import { changeCardContent, thisEditPage, changeCardId } from './cardEdit-reducer'
 
 const CHANGE_CARD_LIST = 'CHANGE-CARD-LIST';
 const GET_STARTED = 'GET-STARTED';
@@ -72,10 +72,10 @@ export const getCard = (id) => {
 
                 //dispatch(zeroingCardContent());
                 dispatch(changeCardContent(result));
-                callForwarding();
+                dispatch(thisEditPage());
+                dispatch(changeCardId(id));
+                callForwardingToCard();
 
-                // НННЕЕЕЕЕ ППААААШШЕЕЕЕТТТТ ПЕРЕАДРЕСАЦИЯ. Компонента не отрисовывается. Только при релоуде страницы (но без стэйта)
-                // FIX ME
 
             }).catch(err => console.log(err))
     }
@@ -89,10 +89,44 @@ const getCardStarted = () => ({
 
 /*===================================================================================*/
 
-const callForwarding = () => {
+
+
+/*===================================================================================*/
+// Delete Card
+
+export const deleteCard = (id) => {
+    return dispatch => {
+        dispatch(getCardStarted());
+
+
+        fetch(`http://localhost:5000/delete/${id}`, {
+            credentials: "include"
+        })
+            .then(res => res.text())
+            .then(result => {
+                console.log(result);
+
+                reloadComponent();
+
+            }).catch(err => console.log(err))
+    }
+}
+
+
+/*===================================================================================*/
+
+
+
+
+
+export const callForwardingToCard = () => {
     history.push('/card');
 }
 
+const reloadComponent = () => {
+    history.push('/1');
+    history.push('/');
+}
 
 
 let changeCardList = (result) => {
