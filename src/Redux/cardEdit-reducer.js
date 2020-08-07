@@ -97,6 +97,36 @@ const postCardStarted = () => ({
 
 /*===================================================================================*/
 
+/*===================================================================================*/
+// Save Card Changes
+
+export const createCard = (postFormContent) => {
+    return dispatch => {
+        dispatch(postCardStarted());
+
+        let formData = new FormData();
+        formData.append('Title', postFormContent.cardTitle);
+        formData.append('Content', postFormContent.cardText);
+
+
+        fetch(`http://localhost:5000/create`, {
+            method: 'POST',
+            credentials: "include",
+            body: formData
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+
+                callForwardingToList();
+
+            }).catch(err => console.log(err))
+    }
+}
+
+
+/*===================================================================================*/
+
 
 
 export const callForwardingToList = () => {

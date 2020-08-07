@@ -13,7 +13,7 @@ export default class CardEdit extends React.Component {
         let editMode = this.props.editMode;
         let thisCreatePage = this.props.thisCreatePage;
         let cardId = this.props.cardId;
-        console.log('This crete page? ' + thisCreatePage);
+        console.log('This create page? ' + thisCreatePage);
         console.log('Id: ' + cardId);
 
         this.newTitleElement = React.createRef();
@@ -45,11 +45,14 @@ export default class CardEdit extends React.Component {
             console.log('Delete');
             this.props.deleteThisCard(cardId);
         }
-        this.saveNewCard = () => { // НЕ ГОТОВО
+        this.saveNewCard = () => { // НЕ ГОТОВО (НА СЕРВЕРЕ НЕ ПРИХОДИТ ТЕЛО ЗАПРОСА)
             console.log('Save new card');
+            let postFormContent = {cardTitle, cardText}
+            this.props.createNewCard(postFormContent);
         }
         this.deleteNewCard = () => { // НЕ ГОТОВО
             console.log('Delete new card');
+            this.props.deleteNewCard();
         }
 
 
