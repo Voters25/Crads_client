@@ -77,7 +77,7 @@ export const saveCardChanges = (postFormContent) => {
             credentials: "include",
             body: formData
         })
-            .then(res => res.json())
+            .then(res => res.text())
             .then(result => {
                 console.log(result);
 
@@ -105,16 +105,16 @@ export const createCard = (postFormContent) => {
         dispatch(postCardStarted());
 
         let formData = new FormData();
-        formData.append('Title', postFormContent.cardTitle);
-        formData.append('Content', postFormContent.cardText);
+        formData.append('title', postFormContent.cardTitle);
+        formData.append('content', postFormContent.cardText);
 
 
-        fetch(`http://localhost:5000/create`, {
+        fetch('http://localhost:5000/create', {
             method: 'POST',
             credentials: "include",
             body: formData
         })
-            .then(res => res.json())
+            .then(res => res.text())
             .then(result => {
                 console.log(result);
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import classes from './CardEdit.module.css';
-import { Row, Col, Card, FormGroup, FormControl, Button } from 'react-bootstrap';
+import { Row, Col, Card, FormGroup, FormControl, Button, Form } from 'react-bootstrap';
 
 export default class CardEdit extends React.Component {
     render() {
@@ -62,18 +62,22 @@ export default class CardEdit extends React.Component {
                 <Card className="mt-4 " style={{ width: '80%', height: '70%', color: 'black' }}>
                     <Card.Body>
                         {editMode ?
-                            <FormGroup >
-                                <FormControl onChange={this.onChangeCardTitle} ref={this.newTitleElement} value={this.props.cardTitle} aria-describedby></FormControl>
-                            </FormGroup>
+                            <Form enctype="multipart/form-data">
+                                <FormGroup>
+                                    <FormControl onChange={this.onChangeCardTitle} ref={this.newTitleElement} value={this.props.cardTitle} aria-describedby></FormControl>
+                                </FormGroup>
+                            </Form>
                         :
-                            <Card.Title>
+                            <Card.Title >
                                 {this.props.cardTitle}
                             </Card.Title>
                         }
                         {editMode ?
-                            <FormGroup >
-                                <FormControl onChange={this.onChangeCardText} ref={this.newTextElement} value={this.props.cardText} aria-describedby></FormControl>
-                            </FormGroup>
+                            <Form enctype="multipart/form-data">
+                                <FormGroup>
+                                    <FormControl onChange={this.onChangeCardText} ref={this.newTextElement} value={this.props.cardText} aria-describedby></FormControl>
+                                </FormGroup>
+                            </Form>
                         :
                             <Card.Text>
                                 {this.props.cardText}
