@@ -10,16 +10,16 @@ export default class CardList extends React.Component {
         this.props.getCardList();
         //console.log(Date());
 
-        
-        let date = new Date();
-        let getDate = date.getDate();
-        let getDay = date.getDay();
-        let getHours = date.getHours();
-        let getMinutes = date.getMinutes();
-        console.log('Месяц: ' + getDate);
-        console.log('День: ' + getDay);
-        console.log('Час: ' + getHours);
-        console.log('Минута: ' + getMinutes);
+
+        //let date = new Date();
+        //let getDate = date.getDate();
+        //let getDay = date.getDay();
+        //let getHours = date.getHours();
+        //let getMinutes = date.getMinutes();
+        //console.log('Месяц: ' + getDate);
+        //console.log('День: ' + getDay);
+        //console.log('Час: ' + getHours);
+        //console.log('Минута: ' + getMinutes);
     }
 
     render() {
@@ -35,7 +35,7 @@ export default class CardList extends React.Component {
         
 
         this.cardElements = this.props.cardList
-        .map((e => <CardElement key={e._id} title={e.Title} content={e.Content} id={e._id} openThisCard={this.props.openThisCard} deleteThisCard={this.props.deleteThisCard} /> ))
+        .map((e => <CardElement key={e._id} title={e.Title} content={e.Content} date={e.Date} id={e._id} openThisCard={this.props.openThisCard} deleteThisCard={this.props.deleteThisCard} /> ))
 
 
         // Навесь onClick на карточки, для их открытия.

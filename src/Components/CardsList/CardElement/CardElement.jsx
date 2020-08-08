@@ -8,6 +8,8 @@ export default class CardElement extends React.Component {
     render() {
 
         let id = this.props.id;
+        let date = new Date(this.props.date);
+        console.log(date.getDay());
 
         let onOpenCard = () => {
             this.props.openThisCard(id);

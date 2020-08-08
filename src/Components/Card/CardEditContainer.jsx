@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import CardEdit from './CardEdit';
-import { updateNewCardText, updateNewCardTitle, editCard, saveCardChanges, createCard, zeroingCardContent, callForwardingToList } from '../../Redux/cardEdit-reducer';
+import { updateNewCardText, updateNewCardTitle, editCard, saveCardChanges, createCard, zeroingCardContent, callForwardingToList, updateNewCardTag } from '../../Redux/cardEdit-reducer';
 import { deleteCard } from '../../Redux/cardList-reducer';
 
 
@@ -9,6 +9,7 @@ const mapStateToProps = (state) => {
 
         cardText: state.cardEdit.cardText,
         cardTitle: state.cardEdit.cardTitle,
+        cardTag: state.cardEdit.cardTag,
 
         editMode: state.cardEdit.editMode,
         thisCreatePage: state.cardEdit.thisCreatePage,
@@ -27,6 +28,10 @@ const mapDispatchToProps = (dispatch) => {
         },
         changeCardTitle: (text) => {
             let action = updateNewCardTitle(text);
+            dispatch(action);
+        },
+        changeCardTag: (tag) => {
+            let action = updateNewCardTag(tag);
             dispatch(action);
         },
         onEditCard: () => {

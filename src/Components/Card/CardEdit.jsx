@@ -9,6 +9,7 @@ export default class CardEdit extends React.Component {
         //console.log(this.props.cardTitle);
         let cardTitle = this.props.cardTitle;
         let cardText = this.props.cardText;
+        let cardTag = this.props.cardTag;
 
         let editMode = this.props.editMode;
         let thisCreatePage = this.props.thisCreatePage;
@@ -30,6 +31,12 @@ export default class CardEdit extends React.Component {
         }
         console.log(this.props.cardText);
 
+        this.newTagElement = React.createRef();
+        this.onChangeCardTag = () => {
+            let tag = this.newTagElement.current.value;
+            this.props.changeCardTag(tag);
+        }
+
 
         this.editCard = () => {
             console.log('Edit');
@@ -37,7 +44,7 @@ export default class CardEdit extends React.Component {
         }
         this.saveCard = () => { // ПРОТЕСТИ
             console.log('Save');
-            let postFormContent = {cardId, cardTitle, cardText}
+            let postFormContent = {cardId, cardTitle, cardText, cardTag}
             //console.log(postFormContent);
             this.props.saveThisCardChanges(postFormContent);
         }
@@ -47,7 +54,7 @@ export default class CardEdit extends React.Component {
         }
         this.saveNewCard = () => { // НЕ ГОТОВО (НА СЕРВЕРЕ НЕ ПРИХОДИТ ТЕЛО ЗАПРОСА)
             console.log('Save new card');
-            let postFormContent = {cardTitle, cardText}
+            let postFormContent = {cardTitle, cardText, cardTag}
             this.props.createNewCard(postFormContent);
         }
         this.deleteNewCard = () => { // НЕ ГОТОВО
@@ -83,8 +90,14 @@ export default class CardEdit extends React.Component {
                                 {this.props.cardText}
                             </Card.Text>
                         }
+                        {editMode &&
+                            <FormControl onChange={this.onChangeCardTag} ref={this.newTagElement} value={this.props.cardTag} aria-describedby></FormControl>
+                        }
+                        
+
 
                         <Button onClick={this.editCard} className="mr-3" variant="dark">Edit</Button>
+
                         {thisCreatePage ?
                             <Button onClick={this.saveNewCard} className="mr-3" variant="dark">Save</Button>
                         :
@@ -94,6 +107,11 @@ export default class CardEdit extends React.Component {
                             <Button onClick={this.deleteNewCard} className="mr-3" variant="dark">Delete</Button>
                         :
                             <Button onClick={this.deleteCard} className="mr-3" variant="dark">Delete</Button>
+                        }
+                        {!editMode ?
+                            <Button onClick={this.editCard} className="mr-3" variant="warning">{cardTag || cardTag == !undefined ? 'Tag: ' + cardTag : '+ Add tag'}</Button>
+                            :
+                            null
                         }
                     </Card.Body>
                 </Card>

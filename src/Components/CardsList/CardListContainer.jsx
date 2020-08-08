@@ -3,7 +3,7 @@ import CardList from './CardList';
 //import { getList } from '../../Redux/cardList-reducer';
 //import { getCard } from '../../Redux/cardEdit-reducer';
 import { getCard, deleteCard, getList, callForwardingToCard } from '../../Redux/cardList-reducer';
-import { zeroingCardContent, createHints, thisEditPage, thisCreatePage } from '../../Redux/cardEdit-reducer';
+import { zeroingCardContent, createHints, thisEditPage, thisCreatePage, switchOfEditCard } from '../../Redux/cardEdit-reducer';
 
 
 const mapStateToProps = (state) => {
@@ -37,6 +37,7 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(zeroingCardContent());
             dispatch(thisCreatePage());
             dispatch(createHints());
+            dispatch(switchOfEditCard());
             callForwardingToCard();
         }
 

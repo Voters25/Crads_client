@@ -7,11 +7,13 @@ const CHANGE_CARD_CONTENT = 'CHANGE-CARD-CONTENT';
 const CHANGE_EDIT_MODE = 'CHANGE-EDIT-MODE';
 const CHANGE_THIS_CREATE_PAGE = 'CHANGE-THIS-CREATE-PAGE';
 const CHANGE_CARD_ID = 'CHANGE-CARD-ID';
+const CHANGE_CARD_TAG = 'CHANGE-CARD-TAG';
 
 
 const initialState = {
     cardTitle: '',
     cardText: '',
+    cardTag: '',
     editMode: false,
     thisCreatePage: false,
     cardId: ''
@@ -35,7 +37,8 @@ const cardEditReducer = (state = initialState, action) => {
         return {
             ...state,
             cardTitle: action.newTitle,
-            cardText: action.newText
+            cardText: action.newText,
+            cardTag: action.newTag
         }
     case CHANGE_EDIT_MODE:
         return {
@@ -52,6 +55,11 @@ const cardEditReducer = (state = initialState, action) => {
             ...state,
             cardId: action.newId
         }
+    case CHANGE_CARD_TAG:
+        return {
+            ...state,
+            cardTag: action.newTag
+        }
 
     default:
         return state
@@ -66,10 +74,14 @@ export const saveCardChanges = (postFormContent) => {
     return dispatch => {
         dispatch(postCardStarted());
 
+        let date = new Date();
+
         let formData = new FormData();
         formData.append('id', postFormContent.cardId);
-        formData.append('Title', postFormContent.cardTitle);
-        formData.append('Content', postFormContent.cardText);
+        formData.append('title', postFormContent.cardTitle);
+        formData.append('content', postFormContent.cardText);
+        formData.append('tag', postFormContent.cardTag);
+        formData.append('date', date);
 
 
         fetch(`http://localhost:5000/edit`, {
@@ -104,9 +116,13 @@ export const createCard = (postFormContent) => {
     return dispatch => {
         dispatch(postCardStarted());
 
+        let date = new Date();
+
         let formData = new FormData();
         formData.append('title', postFormContent.cardTitle);
         formData.append('content', postFormContent.cardText);
+        formData.append('tag', postFormContent.cardTag);
+        formData.append('date', date);
 
 
         fetch('http://localhost:5000/create', {
@@ -139,7 +155,8 @@ export let changeCardContent = (result) => {
     return {
         type: 'CHANGE-CARD-CONTENT',
         newTitle: result.Title,
-        newText: result.Content
+        newText: result.Content,
+        newTag: result.Tag
     }
 }
 
@@ -147,7 +164,8 @@ export const zeroingCardContent = () => {
     return {
         type: 'CHANGE-CARD-CONTENT',
         newTitle: '',
-        newText: ''
+        newText: '',
+        newTag: ''
     }
 }
 
@@ -155,14 +173,22 @@ export const createHints = () => {
     return {
         type: 'CHANGE-CARD-CONTENT',
         newTitle: '   Title...',
-        newText: '   Text...'
+        newText: '   Text...',
+        newTag: ''
     }
 }
 
 export const editCard = () => {
     return {
         type: 'CHANGE-EDIT-MODE',
-        newModeValue: !initialState.editMode
+        //newModeValue: !initialState.editMode
+        newModeValue: true
+    }
+}
+export const switchOfEditCard = () => {
+    return {
+        type: 'CHANGE-EDIT-MODE',
+        newModeValue: false
     }
 }
 
@@ -205,6 +231,13 @@ export const updateNewCardText = (text) => {
     return {
         type: 'CHANGE-CARD-TEXT',
         newText: text
+    }
+}
+
+export const updateNewCardTag = (tag) => {
+    return {
+        type: 'CHANGE-CARD-TAG',
+        newTag: tag
     }
 }
 

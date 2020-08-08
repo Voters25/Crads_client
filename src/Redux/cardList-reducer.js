@@ -1,5 +1,5 @@
 import history from "../history";
-import { changeCardContent, thisEditPage, changeCardId } from './cardEdit-reducer'
+import { changeCardContent, thisEditPage, changeCardId, switchOfEditCard } from './cardEdit-reducer'
 
 const CHANGE_CARD_LIST = 'CHANGE-CARD-LIST';
 const GET_STARTED = 'GET-STARTED';
@@ -73,6 +73,7 @@ export const getCard = (id) => {
                 //dispatch(zeroingCardContent());
                 dispatch(changeCardContent(result));
                 dispatch(thisEditPage());
+                dispatch(switchOfEditCard());
                 dispatch(changeCardId(id));
                 callForwardingToCard();
 
