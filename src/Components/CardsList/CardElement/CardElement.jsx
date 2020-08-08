@@ -8,6 +8,7 @@ export default class CardElement extends React.Component {
     render() {
 
         let id = this.props.id;
+        let cardTag = this.props.tag;
         let date = new Date(this.props.date);
         console.log(date.getDay());
 
@@ -31,6 +32,11 @@ export default class CardElement extends React.Component {
                     </Card.Text>
                     <Button onClick={onOpenCard} className="mr-3" variant="dark">Open</Button>
                     <Button onClick={onDeleteCard} className="mr-3" variant="dark">Delete</Button>
+                    {cardTag || cardTag == !undefined ?
+                        <Button variant="warning">{cardTag}</Button>
+                    :
+                        null
+                    }
                 </Card.Body>
             </Card>
         )
