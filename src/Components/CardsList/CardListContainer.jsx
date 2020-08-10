@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import CardList from './CardList';
 //import { getList } from '../../Redux/cardList-reducer';
 //import { getCard } from '../../Redux/cardEdit-reducer';
-import { getCard, deleteCard, getList, callForwardingToCard } from '../../Redux/cardList-reducer';
+import { getCard, deleteCard, getList, callForwardingToCard, getListWithByTag } from '../../Redux/cardList-reducer';
 import { zeroingCardContent, createHints, thisEditPage, thisCreatePage, switchOfEditCard } from '../../Redux/cardEdit-reducer';
 
 
@@ -40,6 +40,10 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(createHints());
             dispatch(switchOfEditCard());
             callForwardingToCard();
+        },
+
+        getCardsWithTag: (tag) => {
+            dispatch(getListWithByTag(tag));
         }
 
     }

@@ -33,9 +33,14 @@ export default class CardList extends React.Component {
         this.newCard = () => {
             this.props.createNewCard();
         }
+
+        this.getCardListWithTag = (tag) => {
+            this.props.getCardsWithTag(tag);
+        }
+
         
         this.tagElements = this.props.tagList
-        .map((e => <TagElement key={Math.random().toString(36)} tag={e} /> ))
+        .map((e => <TagElement key={Math.random().toString(36)} tag={e} getCardListWithTag={this.getCardListWithTag} /> ))
 
         this.cardElements = this.props.cardList
         .map((e => <CardElement key={e._id} title={e.Title} content={e.Content} tag={e.Tag} date={e.Date} id={e._id} openThisCard={this.props.openThisCard} deleteThisCard={this.props.deleteThisCard} /> ))

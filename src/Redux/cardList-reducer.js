@@ -76,6 +76,35 @@ const getListStarted = () => ({
 
 
 /*===================================================================================*/
+// Get cards list with tag
+
+
+export const getListWithByTag = (tag) => {
+    return dispatch => {
+        dispatch(getListStarted());
+
+
+        fetch(`http://localhost:5000/byTag/${tag}`, {
+            credentials: "include"
+        })
+            .then(res => res.json())
+            .then(result => {
+                //console.log(result.result);
+                //console.log(result.tagList);
+
+                //dispatch(changeCardList(result.cardList));
+                //dispatch(changeTagList(result.tagList));
+
+                dispatch(changeList(result));
+
+            }).catch(err => console.log(err));
+
+    }
+}
+/*===================================================================================*/
+
+
+/*===================================================================================*/
 // Get Card
 
 export const getCard = (id) => {
