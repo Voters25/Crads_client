@@ -15,11 +15,11 @@ export default class NavBar extends React.Component {
 
         return (
 
-            <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" >
+            <Navbar collapseOnSelect expand="md" bg="" style={{ background: '#ff9800' }} >
                 <Container>
                     <NavbarToggle aria-controls="responsive-navbar-nav" />
                     <NavbarCollapse id="responsive-navbar-nav" >
-                        <Button onClick={this.getAllCards} variant="outline-info">All cards</Button>
+                        <Button onClick={this.getAllCards} variant="outline-dark">All cards</Button>
                         {/*<Button variant="outline-info">Refresh</Button>*/}
                     </NavbarCollapse>
                 </Container>

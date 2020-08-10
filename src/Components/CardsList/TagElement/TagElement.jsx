@@ -14,7 +14,7 @@ export const TagElement = (props) => {
     return (
 
         <React.Fragment>
-            <Button className="" onClick={getCardsWithTag} variant="dark">{props.tag}</Button>
+            <Button className="mr-3" onClick={getCardsWithTag} variant="warning">{props.tag}</Button>
         </React.Fragment>
 
     )

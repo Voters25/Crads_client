@@ -43,22 +43,22 @@ export default class CardList extends React.Component {
         .map((e => <TagElement key={Math.random().toString(36)} tag={e} getCardListWithTag={this.getCardListWithTag} /> ))
 
         this.cardElements = this.props.cardList
-        .map((e => <CardElement key={e._id} title={e.Title} content={e.Content} tag={e.Tag} date={e.Date} id={e._id} openThisCard={this.props.openThisCard} deleteThisCard={this.props.deleteThisCard} /> ))
+        .map((e => <CardElement key={e._id} title={e.Title} content={e.Content} tag={e.Tag} date={e.Date} id={e._id} getCardListWithTag={this.getCardListWithTag} openThisCard={this.props.openThisCard} deleteThisCard={this.props.deleteThisCard} /> ))
 
 
-        // Навесь onClick на карточки, для их открытия.
+        // 'rgb(65, 74, 78)'
 
         return (
             <Row>
                 <Col  className={classes.Test}>
                     <Row>
-                        <Col md style={{ background: 'yellow', height: '8vh' }}>{this.tagElements}</Col>
+                        <Col md className="d-flex flex-row justify-content-start align-items-center " style={{ background: 'rgb(65, 74, 78)', height: '8vh', overflow: 'auto' }}>{this.tagElements}</Col>
                     </Row>
                     <Row>
                         <Col md={12} style={{ background: 'rgb(65, 74, 78)', height: '86.5vh', overflow: 'auto', color: 'white' }}>
                             <Button onClick={this.newCard} className="mt-3 mb-1 ml-2">+ New Card</Button>
                             <Button onClick={this.getList} className="mt-3 mb-1 ml-2">Update list</Button>
-                            <Row className="justify-content-around " style={{ overflow: 'hidden' }} >
+                            <Row className="d-flex flex-row justify-content-around align-items-center " style={{ overflow: 'hidden' }} >
 
                                 {this.cardElements}
                                 

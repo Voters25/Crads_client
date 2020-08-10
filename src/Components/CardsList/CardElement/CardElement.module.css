@@ -6,7 +6,9 @@
 }
 
 .btn {
-  max-width: 5rem;
-  max-height: 2rem;
+  max-width: 6rem;
+  max-width: 93px;
+  height: 38px;
+  max-height: 38px;
   overflow: hidden;
 }

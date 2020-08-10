@@ -19,6 +19,10 @@ export default class CardElement extends React.Component {
             this.props.deleteThisCard(id);
         }
 
+        this.getCardsWithTag = () => {
+            this.props.getCardListWithTag(cardTag);
+        }
+
 
         return (
             <Card className="mt-3 mr-3 ml-3 " style={{ width: '19rem', height: '20rem', color: 'black' }} key={this.props.id}>
@@ -33,7 +37,7 @@ export default class CardElement extends React.Component {
                     <Button onClick={onOpenCard} className="mr-3" variant="dark">Open</Button>
                     <Button onClick={onDeleteCard} className="mr-3" variant="dark">Delete</Button>
                     {cardTag || cardTag == !undefined ?
-                        <Button variant="warning" className={classes.btn} >{cardTag}</Button>
+                        <Button variant="warning" onClick={this.getCardsWithTag} className={classes.btn} >{cardTag}</Button>
                     :
                         null
                     }
