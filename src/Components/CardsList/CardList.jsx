@@ -27,7 +27,7 @@ export default class CardList extends React.Component {
 
         this.getList = async () => {
             await this.props.getCardList();
-            console.log(this.props.cardList); // Чёт приходит не сразу...
+            console.log(this.props.cardList);
         }
 
         this.newCard = () => {
@@ -57,7 +57,7 @@ export default class CardList extends React.Component {
                     <Row>
                         <Col md={12} style={{ background: 'rgb(65, 74, 78)', height: '86.5vh', overflow: 'auto', color: 'white' }}>
                             <Button onClick={this.newCard} className="mt-3 mb-1 ml-2">+ New Card</Button>
-                            <Button onClick={this.getList} className="mt-3 mb-1 ml-2">Update list</Button>
+                            
                             <Row className="d-flex flex-row justify-content-around align-items-center " style={{ overflow: 'hidden' }} >
 
                                 {this.cardElements}
@@ -71,9 +71,4 @@ export default class CardList extends React.Component {
     }
 }
 
-// <CardElementContainer />
-
-
-
-// className="justify-content-center"
-// className="flex-md-nowrap"
+// <Button onClick={this.getList} className="mt-3 mb-1 ml-2">Update list</Button>
