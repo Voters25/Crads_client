@@ -1,7 +1,5 @@
 import { connect } from 'react-redux'
 import CardList from './CardList';
-//import { getList } from '../../Redux/cardList-reducer';
-//import { getCard } from '../../Redux/cardEdit-reducer';
 import { getCard, deleteCard, getList, callForwardingToCard, getListWithByTag } from '../../Redux/cardList-reducer';
 import { zeroingCardContent, createHints, thisEditPage, thisCreatePage, switchOfEditCard } from '../../Redux/cardEdit-reducer';
 
@@ -11,10 +9,6 @@ const mapStateToProps = (state) => {
 
         cardList: state.cardList.cardList,
         tagList: state.cardList.tagList
-
-
-        //cardText: state.cardEdit.cardText,
-        //cardTitle: state.cardEdit.cardTitle,
 
     }
 }

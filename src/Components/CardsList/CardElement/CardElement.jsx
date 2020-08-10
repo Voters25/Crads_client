@@ -46,26 +46,3 @@ export default class CardElement extends React.Component {
         )
     }
 }
-
-// style={{ overflow: 'hidden', height: '16rem' }}
-
-
-// className="justify-content-center"
-// className="flex-md-nowrap"
-
-/*
-
-<Card className="mt-3 mr-3 ml-3" style={{ width: '19rem', color: 'black' }}>
-                <Card.Body>
-                    <Card.Title>
-                        Title
-                    </Card.Title>
-                    <Card.Text>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptatem adipisci veritatis necessitatibus, voluptas dolorum natus repudiandae autem minus perferendis et, consequuntur iure, saepe earum vitae! Quae iure odio possimus?
-                    </Card.Text>
-                    <Button className="mr-3" variant="dark">Open</Button>
-                    <Button className="mr-3" variant="dark">Delete</Button>
-                </Card.Body>
-            </Card>
-
-*/

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Button, Navbar, Container, Nav, Form, FormControl, Row, Col } from 'react-bootstrap';
 import NavbarToggle from 'react-bootstrap/esm/NavbarToggle';
 import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
-//import { NavLink, Link } from 'react-router-dom';
 
 
 

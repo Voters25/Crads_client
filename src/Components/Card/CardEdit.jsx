@@ -5,8 +5,6 @@ import { Row, Col, Card, FormGroup, FormControl, Button, Form } from 'react-boot
 export default class CardEdit extends React.Component {
     render() {
 
-        //console.log(this.props.cardText);
-        //console.log(this.props.cardTitle);
         let cardTitle = this.props.cardTitle;
         let cardText = this.props.cardText;
         let cardTag = this.props.cardTag;
@@ -17,16 +15,6 @@ export default class CardEdit extends React.Component {
         let cardId = this.props.cardId;
         console.log('This create page? ' + thisCreatePage);
         console.log('Id: ' + cardId);
-
-        /* let getFullDate = () => {
-
-            let day = cardDate.getDate();
-            let month = cardDate.getMonth();
-            let year = cardDate.getFullYear();
-
-            return day + '.' + month + '.' + year;
-
-        } */
 
 
         this.newTitleElement = React.createRef();
@@ -54,22 +42,21 @@ export default class CardEdit extends React.Component {
             console.log('Edit');
             this.props.onEditCard();
         }
-        this.saveCard = () => { // ПРОТЕСТИ
+        this.saveCard = () => {
             console.log('Save');
             let postFormContent = {cardId, cardTitle, cardText, cardTag}
-            //console.log(postFormContent);
             this.props.saveThisCardChanges(postFormContent);
         }
         this.deleteCard = () => {
             console.log('Delete');
             this.props.deleteThisCard(cardId);
         }
-        this.saveNewCard = () => { // НЕ ГОТОВО (НА СЕРВЕРЕ НЕ ПРИХОДИТ ТЕЛО ЗАПРОСА)
+        this.saveNewCard = () => {
             console.log('Save new card');
             let postFormContent = {cardTitle, cardText, cardTag}
             this.props.createNewCard(postFormContent);
         }
-        this.deleteNewCard = () => { // НЕ ГОТОВО
+        this.deleteNewCard = () => {
             console.log('Delete new card');
             this.props.deleteNewCard();
         }
@@ -138,38 +125,3 @@ export default class CardEdit extends React.Component {
         )
     }
 }
-
-
-
-
-/*
-
-<Card.Link href='#'>Edit</Card.Link>
-<Card.Link href='#'>Save</Card.Link>
-<Card.Link href='#'>Delete</Card.Link>
-
-*/
-
-
-/* 
-
-style={{ background: 'yellow', height: '94.5vh'}}
-
-*/
-
-/*
-
-<Card className="mt-3 mr-3 ml-3" style={{ width: '19rem', color: 'black' }}>
-                        <Card.Body>
-                            <Card.Title>
-                                Title
-                                    </Card.Title>
-                            <Card.Text>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam voluptatem adipisci veritatis necessitatibus, voluptas dolorum natus repudiandae autem minus perferendis et, consequuntur iure, saepe earum vitae! Quae iure odio possimus?
-                                    </Card.Text>
-                            <Card.Link href='#'>Edit</Card.Link>
-                            <Card.Link href='#'>Delete</Card.Link>
-                        </Card.Body>
-                    </Card>
-
-*/

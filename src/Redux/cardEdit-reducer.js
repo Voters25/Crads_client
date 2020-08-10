@@ -191,7 +191,6 @@ export const createHints = () => {
 export const editCard = () => {
     return {
         type: 'CHANGE-EDIT-MODE',
-        //newModeValue: !initialState.editMode
         newModeValue: true
     }
 }

@@ -53,11 +53,6 @@ export const getList = () => {
         })
             .then(res => res.json())
             .then(result => {
-                //console.log(result.result);
-                //console.log(result.tagList);
-
-                //dispatch(changeCardList(result.cardList));
-                //dispatch(changeTagList(result.tagList));
 
                 dispatch(changeList(result));
 
@@ -89,11 +84,6 @@ export const getListWithByTag = (tag) => {
         })
             .then(res => res.json())
             .then(result => {
-                //console.log(result.result);
-                //console.log(result.tagList);
-
-                //dispatch(changeCardList(result.cardList));
-                //dispatch(changeTagList(result.tagList));
 
                 dispatch(changeList(result));
 
@@ -119,7 +109,6 @@ export const getCard = (id) => {
             .then(result => {
                 console.log(result);
 
-                //dispatch(zeroingCardContent());
                 dispatch(changeCardContent(result));
                 dispatch(thisEditPage());
                 dispatch(switchOfEditCard());

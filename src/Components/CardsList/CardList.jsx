@@ -9,18 +9,6 @@ export default class CardList extends React.Component {
 
     componentDidMount() {
         this.props.getCardList();
-        //console.log(Date());
-
-
-        //let date = new Date();
-        //let getDate = date.getDate();
-        //let getDay = date.getDay();
-        //let getHours = date.getHours();
-        //let getMinutes = date.getMinutes();
-        //console.log('Месяц: ' + getDate);
-        //console.log('День: ' + getDay);
-        //console.log('Час: ' + getHours);
-        //console.log('Минута: ' + getMinutes);
     }
 
     render() {
