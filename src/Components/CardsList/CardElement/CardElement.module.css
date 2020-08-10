@@ -1,5 +1,6 @@
 .text {
   overflow: hidden;
-  height: 12rem;
+  height: 10rem;
+  /* height: 12rem; */
   text-overflow: ellipsis;
 }

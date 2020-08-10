@@ -91,6 +91,9 @@ export default class CardEdit extends React.Component {
                                 {this.props.cardTitle}
                             </Card.Title>
                         }
+
+                        <Card.Subtitle className="mb-2 text-muted">{cardDate}</Card.Subtitle>
+                        
                         {editMode ?
                             <Form enctype="multipart/form-data">
                                 <FormGroup>

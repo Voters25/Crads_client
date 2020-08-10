@@ -199,7 +199,7 @@ let changeList = (result) => {
     return {
         type: 'CHANGE-LIST',
         newTags: result.tagList,
-        newList: result.cardList
+        newList: result.cardList.reverse()
     }
 }
 

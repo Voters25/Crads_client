@@ -82,7 +82,7 @@ export const saveCardChanges = (postFormContent) => {
     return dispatch => {
         dispatch(postCardStarted());
 
-        let date = new Date();
+        let date = new Date().toLocaleString();
 
         let formData = new FormData();
         formData.append('id', postFormContent.cardId);
@@ -118,13 +118,13 @@ const postCardStarted = () => ({
 /*===================================================================================*/
 
 /*===================================================================================*/
-// Save Card Changes
+// Sve new Card 
 
 export const createCard = (postFormContent) => {
     return dispatch => {
         dispatch(postCardStarted());
 
-        let date = new Date();
+        let date = new Date().toLocaleString();
 
         let formData = new FormData();
         formData.append('title', postFormContent.cardTitle);

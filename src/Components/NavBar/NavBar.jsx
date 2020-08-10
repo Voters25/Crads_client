@@ -8,13 +8,19 @@ import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 
 export default class NavBar extends React.Component {
     render() {
+
+        this.getAllCards = () => {
+            this.props.getAllCard();
+        }
+
         return (
 
             <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" >
                 <Container>
                     <NavbarToggle aria-controls="responsive-navbar-nav" />
                     <NavbarCollapse id="responsive-navbar-nav" >
-                        <Button variant="outline-info">Log In</Button>
+                        <Button onClick={this.getAllCards} variant="outline-info">All cards</Button>
+                        {/*<Button variant="outline-info">Refresh</Button>*/}
                     </NavbarCollapse>
                 </Container>
             </Navbar>

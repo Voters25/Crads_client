@@ -9,8 +9,7 @@ export default class CardElement extends React.Component {
 
         let id = this.props.id;
         let cardTag = this.props.tag;
-        let date = new Date(this.props.date);
-        //console.log(date.getDate());
+        let cardDate = this.props.date;
 
         let onOpenCard = () => {
             this.props.openThisCard(id);
@@ -27,6 +26,7 @@ export default class CardElement extends React.Component {
                     <Card.Title >
                         {this.props.title}
                     </Card.Title>
+                    <Card.Subtitle className="mb-2 text-muted">{cardDate}</Card.Subtitle>
                     <Card.Text className={classes.text} >
                         {this.props.content}
                     </Card.Text>
