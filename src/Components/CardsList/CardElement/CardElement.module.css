@@ -4,3 +4,9 @@
   /* height: 12rem; */
   text-overflow: ellipsis;
 }
+
+.btn {
+  max-width: 5rem;
+  max-height: 2rem;
+  overflow: hidden;
+}

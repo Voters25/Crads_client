@@ -33,7 +33,7 @@ export default class CardElement extends React.Component {
                     <Button onClick={onOpenCard} className="mr-3" variant="dark">Open</Button>
                     <Button onClick={onDeleteCard} className="mr-3" variant="dark">Delete</Button>
                     {cardTag || cardTag == !undefined ?
-                        <Button variant="warning">{cardTag}</Button>
+                        <Button variant="warning" className={classes.btn} >{cardTag}</Button>
                     :
                         null
                     }

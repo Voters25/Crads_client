@@ -58,7 +58,7 @@ export default class CardList extends React.Component {
                         <Col md={12} style={{ background: 'rgb(65, 74, 78)', height: '86.5vh', overflow: 'auto', color: 'white' }}>
                             <Button onClick={this.newCard} className="mt-3 mb-1 ml-2">+ New Card</Button>
                             <Button onClick={this.getList} className="mt-3 mb-1 ml-2">Update list</Button>
-                            <Row className="justify-content-around " style={{ overflow: 'hidden', height: '35rem' }} >
+                            <Row className="justify-content-around " style={{ overflow: 'hidden' }} >
 
                                 {this.cardElements}
                                 
