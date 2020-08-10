@@ -10,6 +10,7 @@ const mapStateToProps = (state) => {
         cardText: state.cardEdit.cardText,
         cardTitle: state.cardEdit.cardTitle,
         cardTag: state.cardEdit.cardTag,
+        cardDate: state.cardEdit.cardDate,
 
         editMode: state.cardEdit.editMode,
         thisCreatePage: state.cardEdit.thisCreatePage,

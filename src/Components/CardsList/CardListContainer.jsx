@@ -10,6 +10,7 @@ const mapStateToProps = (state) => {
     return {
 
         cardList: state.cardList.cardList,
+        tagList: state.cardList.tagList
 
 
         //cardText: state.cardEdit.cardText,

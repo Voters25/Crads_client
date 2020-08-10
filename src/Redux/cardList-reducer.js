@@ -3,10 +3,13 @@ import { changeCardContent, thisEditPage, changeCardId, switchOfEditCard } from 
 
 const CHANGE_CARD_LIST = 'CHANGE-CARD-LIST';
 const GET_STARTED = 'GET-STARTED';
+const CHANGE_TAG_LIST = 'CHANGE-TAG-LIST';
+const CHANGE_LIST = 'CHANGE-LIST';
 
 
 const initialState = {
-    cardList: []
+    cardList: [],
+    tagList: []
 }
 
 const cardListReducer = (state = initialState, action) => {
@@ -17,6 +20,17 @@ const cardListReducer = (state = initialState, action) => {
         return {
              ...state,
              cardList: action.newList
+        }
+    case CHANGE_TAG_LIST:
+        return {
+            ...state,
+            tagList: action.newTags
+        }
+    case CHANGE_LIST:
+        return {
+            ...state,
+            tagList: action.newTags,
+            cardList: action.newList
         }
 
     default:
@@ -39,10 +53,16 @@ export const getList = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+                //console.log(result.result);
+                //console.log(result.tagList);
 
-                dispatch(changeCardList(result));
-            }).catch(err => console.log(err))
+                //dispatch(changeCardList(result.cardList));
+                //dispatch(changeTagList(result.tagList));
+
+                dispatch(changeList(result));
+
+            }).catch(err => console.log(err));
+
     }
 }
 
@@ -131,14 +151,28 @@ const reloadComponent = () => {
 
 
 let changeCardList = (result) => {
+    console.log(result);
     return {
         type: 'CHANGE-CARD-LIST',
         newList: result
     }
 }
 
+let changeTagList = (result) => {
+    console.log(result);
+    return {
+        type: 'CHANGE-TAG-LIST',
+        newTags: result
+    }
+}
 
-
+let changeList = (result) => {
+    return {
+        type: 'CHANGE-LIST',
+        newTags: result.tagList,
+        newList: result.cardList
+    }
+}
 
 
 

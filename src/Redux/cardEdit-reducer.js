@@ -8,12 +8,14 @@ const CHANGE_EDIT_MODE = 'CHANGE-EDIT-MODE';
 const CHANGE_THIS_CREATE_PAGE = 'CHANGE-THIS-CREATE-PAGE';
 const CHANGE_CARD_ID = 'CHANGE-CARD-ID';
 const CHANGE_CARD_TAG = 'CHANGE-CARD-TAG';
+const CHANGE_CARD_DATE = 'CHANGE-CARD-DATE';
 
 
 const initialState = {
     cardTitle: '',
     cardText: '',
     cardTag: '',
+    cardDate: '',
     editMode: false,
     thisCreatePage: false,
     cardId: ''
@@ -38,7 +40,8 @@ const cardEditReducer = (state = initialState, action) => {
             ...state,
             cardTitle: action.newTitle,
             cardText: action.newText,
-            cardTag: action.newTag
+            cardTag: action.newTag,
+            cardDate: action.newDate
         }
     case CHANGE_EDIT_MODE:
         return {
@@ -59,6 +62,11 @@ const cardEditReducer = (state = initialState, action) => {
         return {
             ...state,
             cardTag: action.newTag
+        }
+    case CHANGE_CARD_DATE:
+        return {
+            ...state,
+            cardDate: action.newDate
         }
 
     default:
@@ -156,7 +164,8 @@ export let changeCardContent = (result) => {
         type: 'CHANGE-CARD-CONTENT',
         newTitle: result.Title,
         newText: result.Content,
-        newTag: result.Tag
+        newTag: result.Tag,
+        newDate: result.Date
     }
 }
 
@@ -165,7 +174,8 @@ export const zeroingCardContent = () => {
         type: 'CHANGE-CARD-CONTENT',
         newTitle: '',
         newText: '',
-        newTag: ''
+        newTag: '',
+        newDate: ''
     }
 }
 

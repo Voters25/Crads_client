@@ -3,6 +3,7 @@ import classes from './CardList.module.css';
 import { Row, Col, Card, Button } from 'react-bootstrap'
 import CardElementContainer from './CardElement/CardElementContainer';
 import CardElement from './CardElement/CardElement';
+import { TagElement } from './TagElement/TagElement';
 
 export default class CardList extends React.Component {
 
@@ -33,6 +34,8 @@ export default class CardList extends React.Component {
             this.props.createNewCard();
         }
         
+        this.tagElements = this.props.tagList
+        .map((e => <TagElement key={Math.random().toString(36)} tag={e} /> ))
 
         this.cardElements = this.props.cardList
         .map((e => <CardElement key={e._id} title={e.Title} content={e.Content} tag={e.Tag} date={e.Date} id={e._id} openThisCard={this.props.openThisCard} deleteThisCard={this.props.deleteThisCard} /> ))
@@ -44,7 +47,7 @@ export default class CardList extends React.Component {
             <Row>
                 <Col  className={classes.Test}>
                     <Row>
-                        <Col md style={{ background: 'yellow', height: '8vh' }}>ТЕГИ</Col>
+                        <Col md style={{ background: 'yellow', height: '8vh' }}>{this.tagElements}</Col>
                     </Row>
                     <Row>
                         <Col md={12} style={{ background: 'rgb(65, 74, 78)', height: '86.5vh', overflow: 'auto', color: 'white' }}>

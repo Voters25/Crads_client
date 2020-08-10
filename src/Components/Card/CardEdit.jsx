@@ -10,12 +10,24 @@ export default class CardEdit extends React.Component {
         let cardTitle = this.props.cardTitle;
         let cardText = this.props.cardText;
         let cardTag = this.props.cardTag;
+        let cardDate = this.props.cardDate;
 
         let editMode = this.props.editMode;
         let thisCreatePage = this.props.thisCreatePage;
         let cardId = this.props.cardId;
         console.log('This create page? ' + thisCreatePage);
         console.log('Id: ' + cardId);
+
+        /* let getFullDate = () => {
+
+            let day = cardDate.getDate();
+            let month = cardDate.getMonth();
+            let year = cardDate.getFullYear();
+
+            return day + '.' + month + '.' + year;
+
+        } */
+
 
         this.newTitleElement = React.createRef();
         this.onChangeCardTitle = () => {
@@ -113,6 +125,9 @@ export default class CardEdit extends React.Component {
                             :
                             null
                         }
+
+                        <p>{}</p>
+
                     </Card.Body>
                 </Card>
 
