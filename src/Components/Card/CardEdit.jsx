@@ -84,7 +84,7 @@ export default class CardEdit extends React.Component {
                         {editMode ?
                             <Form enctype="multipart/form-data">
                                 <FormGroup>
-                                    <FormControl onChange={this.onChangeCardText} ref={this.newTextElement} value={this.props.cardText} aria-describedby></FormControl>
+                                    <FormControl className={classes.textForm} size="lg" htmlSize="2" as="textarea" rows="3"  onChange={this.onChangeCardText} ref={this.newTextElement} value={this.props.cardText} aria-describedby></FormControl>
                                 </FormGroup>
                             </Form>
                         :
@@ -93,25 +93,25 @@ export default class CardEdit extends React.Component {
                             </Card.Text>
                         }
                         {editMode &&
-                            <FormControl onChange={this.onChangeCardTag} ref={this.newTagElement} value={this.props.cardTag} aria-describedby></FormControl>
+                            <FormControl styles={{ background: '#ffc107', color: '#ffc107' }} onChange={this.onChangeCardTag} ref={this.newTagElement} value={this.props.cardTag} aria-describedby></FormControl>
                         }
                         
 
 
-                        <Button onClick={this.editCard} className="mr-3" variant="dark">Edit</Button>
+                        <Button onClick={this.editCard} className="mr-3 mt-3" variant="dark">Edit</Button>
 
                         {thisCreatePage ?
-                            <Button onClick={this.saveNewCard} className="mr-3" variant="dark">Save</Button>
+                            <Button onClick={this.saveNewCard} className="mr-3 mt-3" variant="dark">Save</Button>
                         :
-                            <Button onClick={this.saveCard} className="mr-3" variant="dark">Save</Button>
+                            <Button onClick={this.saveCard} className="mr-3 mt-3" variant="dark">Save</Button>
                         }
                         {thisCreatePage ?
-                            <Button onClick={this.deleteNewCard} className="mr-3" variant="dark">Delete</Button>
+                            <Button onClick={this.deleteNewCard} className="mr-3 mt-3" variant="dark">Delete</Button>
                         :
-                            <Button onClick={this.deleteCard} className="mr-3" variant="dark">Delete</Button>
+                            <Button onClick={this.deleteCard} className="mr-3 mt-3" variant="dark">Delete</Button>
                         }
                         {!editMode ?
-                            <Button onClick={this.editCard} className="mr-3" variant="warning">{cardTag || cardTag == !undefined ? 'Tag: ' + cardTag : '+ Add tag'}</Button>
+                            <Button onClick={this.editCard} className={classes.button} variant="warning">{cardTag || cardTag == !undefined ? 'Tag: ' + cardTag : '+ Add tag'}</Button>
                             :
                             null
                         }
