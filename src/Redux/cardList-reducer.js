@@ -55,6 +55,7 @@ export const getList = () => {
             .then(result => {
 
                 dispatch(changeList(result));
+                reloadComponent();
 
             }).catch(err => console.log(err));
 

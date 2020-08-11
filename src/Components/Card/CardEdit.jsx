@@ -68,7 +68,7 @@ export default class CardEdit extends React.Component {
                 <Card className="mt-4 " style={{ width: '80%', height: '70%', color: 'black' }}>
                     <Card.Body>
                         {editMode ?
-                            <Form enctype="multipart/form-data">
+                            <Form>
                                 <FormGroup>
                                     <FormControl onChange={this.onChangeCardTitle} ref={this.newTitleElement} value={this.props.cardTitle} aria-describedby></FormControl>
                                 </FormGroup>
@@ -82,7 +82,7 @@ export default class CardEdit extends React.Component {
                         <Card.Subtitle className="mb-2 text-muted">{cardDate}</Card.Subtitle>
                         
                         {editMode ?
-                            <Form enctype="multipart/form-data">
+                            <Form>
                                 <FormGroup>
                                     <FormControl className={classes.textForm} size="lg" htmlSize="2" as="textarea" rows="3"  onChange={this.onChangeCardText} ref={this.newTextElement} value={this.props.cardText} aria-describedby></FormControl>
                                 </FormGroup>
@@ -115,8 +115,6 @@ export default class CardEdit extends React.Component {
                             :
                             null
                         }
-
-                        <p>{}</p>
 
                     </Card.Body>
                 </Card>
