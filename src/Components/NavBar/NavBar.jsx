@@ -11,6 +11,16 @@ export default class NavBar extends React.Component {
         this.getAllCards = () => {
             this.props.getAllCard();
         }
+        this.getLogInPage = () => {
+            this.props.getLogPage();
+        }
+        this.logOut = () => {
+            this.props.onLogOut();
+        }
+
+
+            //  ЕСЛИ ЗАЛОГИНЕН => ЕСТЬ КНОПКА ПОЛУЧИТЬ ЛИСТ
+            //  ТА ЖЕ ТЕМА С LOG OUT
 
         return (
 
@@ -18,7 +28,9 @@ export default class NavBar extends React.Component {
                 <Container>
                     <NavbarToggle aria-controls="responsive-navbar-nav" />
                     <NavbarCollapse id="responsive-navbar-nav" >
+                        <Button onClick={this.getLogInPage} variant="outline-dark" className="mr-3">Log In</Button>
                         <Button onClick={this.getAllCards} variant="outline-dark">All cards</Button>
+                        <Button onClick={this.logOut} variant="outline-dark">Log Out</Button>
                         {/*<Button variant="outline-info">Refresh</Button>*/}
                     </NavbarCollapse>
                 </Container>

@@ -93,7 +93,7 @@ export default class CardEdit extends React.Component {
                             </Card.Text>
                         }
                         {editMode &&
-                            <FormControl styles={{ background: '#ffc107', color: '#ffc107' }} onChange={this.onChangeCardTag} ref={this.newTagElement} value={this.props.cardTag} aria-describedby></FormControl>
+                            <FormControl styles={{ background: '#ffc107', color: '#ffc107' }} onChange={this.onChangeCardTag} ref={this.newTagElement} value={this.props.cardTag} placeholder="   Tag" aria-describedby></FormControl>
                         }
                         
 

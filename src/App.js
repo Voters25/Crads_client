@@ -1,13 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Dropdown from 'react-overlays/Dropdown';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Route, Link } from 'react-router-dom';
 import NavBarContainer from './Components/NavBar/NavBarContainer';
 import CardListContainer from './Components/CardsList/CardListContainer';
 import CardEditContainer from './Components/Card/CardEditContainer';
-import UserFormContainer from './Components/UserForm/UserFormContainer';
+import LogInContainer from './Components/UserForm/LogInContainer';
+import RegistrationContainer from './Components/UserForm/Registration/RegistrationContainer';
 
 //import { Grid, Row, Col } from 'react-bootstrap';
 //import * as BootstrapComponents from 'react-bootstrap';
@@ -26,6 +26,8 @@ function App() {
             <Route exact path='/' component={CardListContainer} />
             <Route path='/card' component={CardEditContainer} />
             {/*<Route path='/create' component={} />*/}
+            <Route path='/LogIn' component={LogInContainer} />
+            <Route path='/Registration' component={RegistrationContainer} />
           </Col>
           
         </Row>
