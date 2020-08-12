@@ -23,11 +23,11 @@ function App() {
       <Container fluid>
         <Row fluid>
           <Col>
-            <Route exact path='/list' component={CardListContainer} />
+            <Route  exact path='/LogIn' component={LogInContainer} />
+            <Route path='/Registration' component={RegistrationContainer} />
+            <Route path='/list' component={CardListContainer} />
             <Route path='/card' component={CardEditContainer} />
             {/*<Route path='/create' component={} />*/}
-            <Route path='/' component={LogInContainer} />
-            <Route path='/Registration' component={RegistrationContainer} />
           </Col>
           
         </Row>

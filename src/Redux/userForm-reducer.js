@@ -149,7 +149,7 @@ export const logOut = () => {
 
 
 export const callForwardingToLogIn = () => {
-    history.push('/')
+    history.push('/LogIn')
 }
 export const callForwardingToRegistration = () => {
     history.push('/Registration')
