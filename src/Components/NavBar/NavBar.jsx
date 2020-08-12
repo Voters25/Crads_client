@@ -6,7 +6,10 @@ import NavbarCollapse from 'react-bootstrap/esm/NavbarCollapse';
 
 
 export default class NavBar extends React.Component {
+
     render() {
+
+        let userName = this.props.userName;
 
         this.getAllCards = () => {
             this.props.getAllCard();
@@ -28,9 +31,15 @@ export default class NavBar extends React.Component {
                 <Container>
                     <NavbarToggle aria-controls="responsive-navbar-nav" />
                     <NavbarCollapse id="responsive-navbar-nav" >
-                        <Button onClick={this.getLogInPage} variant="outline-dark" className="mr-3">Log In</Button>
-                        <Button onClick={this.getAllCards} variant="outline-dark">All cards</Button>
-                        <Button onClick={this.logOut} variant="outline-dark">Log Out</Button>
+                        {userName ?
+                        <React.Fragment>
+                            <Button onClick={this.logOut} variant="outline-dark">Log Out</Button>
+                            <Button onClick={this.getAllCards} variant="outline-dark">All cards</Button>
+                            <h5>{userName}</h5>
+                        </React.Fragment>
+                        :
+                            <Button onClick={this.getLogInPage} variant="outline-dark" className="mr-3">Log In</Button>
+                        }
                         {/*<Button variant="outline-info">Refresh</Button>*/}
                     </NavbarCollapse>
                 </Container>

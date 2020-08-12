@@ -165,7 +165,7 @@ export const callForwardingToCard = () => {
 
 const reloadComponent = () => {
     history.push('/1');
-    history.push('/');
+    history.push('/list');
 }
 
 

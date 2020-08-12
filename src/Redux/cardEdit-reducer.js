@@ -154,7 +154,7 @@ export const createCard = (postFormContent) => {
 
 
 export const callForwardingToList = () => {
-    history.push('/');
+    history.push('/list');
 }
 
 

@@ -6,7 +6,13 @@ import { callForwardingToList } from '../../Redux/cardEdit-reducer';
 
 
 const mapStateToProps = (state) => {
-    
+    return {
+
+
+        userName: state.userForm.userName
+
+
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {

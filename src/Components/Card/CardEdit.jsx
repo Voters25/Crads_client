@@ -101,14 +101,15 @@ export default class CardEdit extends React.Component {
                         <Button onClick={this.editCard} className="mr-3 mt-3" variant="dark">Edit</Button>
 
                         {thisCreatePage ?
-                            <Button onClick={this.saveNewCard} className="mr-3 mt-3" variant="dark">Save</Button>
+                            <React.Fragment>
+                                <Button onClick={this.saveNewCard} className="mr-3 mt-3" variant="dark">Save</Button>
+                                <Button onClick={this.deleteNewCard} className="mr-3 mt-3" variant="dark">Delete</Button>
+                            </React.Fragment>
                         :
-                            <Button onClick={this.saveCard} className="mr-3 mt-3" variant="dark">Save</Button>
-                        }
-                        {thisCreatePage ?
-                            <Button onClick={this.deleteNewCard} className="mr-3 mt-3" variant="dark">Delete</Button>
-                        :
-                            <Button onClick={this.deleteCard} className="mr-3 mt-3" variant="dark">Delete</Button>
+                            <React.Fragment>
+                                <Button onClick={this.saveCard} className="mr-3 mt-3" variant="dark">Save</Button>
+                                <Button onClick={this.deleteCard} className="mr-3 mt-3" variant="dark">Delete</Button>
+                            </React.Fragment>
                         }
                         {!editMode ?
                             <Button onClick={this.editCard} className={classes.button} variant="warning">{cardTag || cardTag == !undefined ? 'Tag: ' + cardTag : '+ Add tag'}</Button>

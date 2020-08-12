@@ -54,7 +54,7 @@ export default class LogIn extends React.Component {
                     <Button onClick={this.sendForm} variant="primary" className="m-auto">
                         Log in
                     </Button>
-                    <Button onClick={this.getRegistrationPage} variant="warning" className="ml-2">
+                    <Button onClick={this.getRegistrationPage} variant="warning" className="ml-md-2 ml-0">
                         Registration
                     </Button>
                     </Col>
