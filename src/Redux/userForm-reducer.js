@@ -70,16 +70,16 @@ export const sendLogInForm = (userForm) => {
         formData.append('password', userForm.password);
 
 
-        fetch('http://localhost:5000/LogIn', {
+        fetch('http://localhost:5000/Login', {
             method: 'POST',
             credentials: "include",
             body: formData
         })
-            .then(res => res.text())
+            .then(res => res.json())
             .then(result => {
                 console.log(result);
 
-                dispatch(changeUserName(result));
+                dispatch(changeUserName(result.email));
                 dispatch(zeroingForm());
                 callForwardingToList();
 
@@ -128,15 +128,20 @@ export const logOut = () => {
     return dispatch => {
 
 
-        fetch('http://localhost:5000/LogOut', {
+        fetch('http://localhost:5000/Logout', {
             credentials: "include"
         })
-            .then(res => res.json())
+            .then(res => res.text())
             .then(result => {
                 console.log(result);
 
-                dispatch(zeroingForm());
-                callForwardingToLogIn();
+                if (result == 'Succses') {
+                    let zeroing = '';
+                    dispatch(zeroingForm());
+                    dispatch(changeUserName(zeroing));
+                    callForwardingToLogIn();
+                }
+                
 
             }).catch(err => console.log(err));
 
