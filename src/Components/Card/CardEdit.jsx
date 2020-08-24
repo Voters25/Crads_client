@@ -66,7 +66,7 @@ export default class CardEdit extends React.Component {
             <Row className="justify-content-center" style={{ height: '94.5vh' }}>
 
                 <Card className="mt-4 " style={{ width: '80%', height: '70%', color: 'black' }}>
-                    <Card.Body>
+                    <Card.Body style={{ overflow: 'auto' }}>
                         {editMode ?
                             <Form>
                                 <FormGroup>

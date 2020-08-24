@@ -62,6 +62,9 @@ const userFormReducer = (state = initialState, action) => {
 /*===================================================================================*/
 // Log In
 
+
+                // https://card-manager.herokuapp.com
+
 export const sendLogInForm = (userForm) => {
     return dispatch => {
 
@@ -69,6 +72,7 @@ export const sendLogInForm = (userForm) => {
         formData.append('email', userForm.email);
         formData.append('password', userForm.password);
 
+        //localhost:5000
 
         fetch('http://localhost:5000/Login', {
             method: 'POST',

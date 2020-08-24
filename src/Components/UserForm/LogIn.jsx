@@ -35,26 +35,26 @@ export default class LogIn extends React.Component {
 
         return (
 
-            <Col xs={7} className="m-auto">
+            <Col xs={12} md={10} lg={8} xl={6} className="m-md-auto">
                 <Form className="mt-4 bg-white border-form-LogIn">
-                    <Form.Group sm={2} controlId="formBasicEmail">
-                        <Col xs={6}  className="m-auto mt-5">
-                            <Form.Label>Email address</Form.Label>
+                    <Form.Group  controlId="formBasicEmail" className="mt-2">
+                        <Col xs={12} sm={10} md={9} lg={8} xl={6} className="m-auto mt-5">
+                            <Form.Label className="ml-2">Email address</Form.Label>
                             <Form.Control type="email" placeholder="Enter email" onChange={this.changeEmail} ref={this.emailFormElement} value={this.props.email} />
                         </Col>
                     </Form.Group>
 
                     <Form.Group controlId="formBasicPassword">
-                        <Col xs={6} className="m-auto">
-                            <Form.Label>Password</Form.Label>
+                        <Col xs={12} sm={10} md={9} lg={8} xl={6} className="m-auto">
+                            <Form.Label className="ml-2">Password</Form.Label>
                             <Form.Control type="password" placeholder="Password" onChange={this.changePassword} ref={this.passwordFormElement} value={this.props.password} />
                         </Col>
                     </Form.Group>
-                    <Col xs={6} className="m-auto">
-                    <Button onClick={this.sendForm} variant="primary" className="m-auto">
+                    <Col /* xs={6} */ xs={12} sm={10} md={9} lg={8} xl={6} className="m-auto">
+                    <Button onClick={this.sendForm} variant="primary" className="mb-2 mt-1">
                         Log in
                     </Button>
-                    <Button onClick={this.getRegistrationPage} variant="warning" className="ml-md-2 ml-0">
+                    <Button onClick={this.getRegistrationPage} variant="warning" className="ml-sm-2 mb-2 mt-1">
                         Registration
                     </Button>
                     </Col>
