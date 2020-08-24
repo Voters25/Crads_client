@@ -10,6 +10,7 @@ export default class NavBar extends React.Component {
     render() {
 
         let userName = this.props.userName;
+        
 
         this.getAllCards = () => {
             this.props.getAllCard();

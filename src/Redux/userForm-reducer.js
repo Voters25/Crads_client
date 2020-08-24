@@ -9,7 +9,7 @@ const CHANGE_FORM = 'CHANGE-FORM';
 const CHANGE_FORM_WITHOUT_EMAIL = 'CHANGE-FORM-WITHOUT-EMAIL';
 
 const initialState = {
-    userName: '',
+    userName: localStorage.getItem('user'),
     email: '',
     password: '',
     passwordTwo: ''
@@ -83,7 +83,8 @@ export const sendLogInForm = (userForm) => {
             .then(result => {
                 console.log(result);
 
-                dispatch(changeUserName(result.email));
+                localStorage.setItem('user', result.email);
+                dispatch(pushLoginToState());
                 dispatch(zeroingForm());
                 callForwardingToList();
 
@@ -140,9 +141,9 @@ export const logOut = () => {
                 console.log(result);
 
                 if (result == 'Succses') {
-                    let zeroing = '';
                     dispatch(zeroingForm());
-                    dispatch(changeUserName(zeroing));
+                    localStorage.removeItem('user');
+                    dispatch(removeUserName());
                     callForwardingToLogIn();
                 }
                 
@@ -165,13 +166,13 @@ export const callForwardingToRegistration = () => {
 }
 
 
-const changeUserName = (result) => {
+const pushLoginToState = () => {
     return {
         type: 'CHANGE-USER-NAME',
-        newName: result
+        newName: localStorage.getItem('user')
     }
 }
-const zeroingUserName = () => {
+const removeUserName = () => {
     return {
         type: 'CHANGE-USER-NAME',
         newName: ''
