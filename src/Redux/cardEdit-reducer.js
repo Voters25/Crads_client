@@ -92,7 +92,7 @@ export const saveCardChanges = (postFormContent) => {
         formData.append('date', date);
 
 
-        fetch(`http://localhost:5000/edit`, {
+        fetch(`https://card-manager.herokuapp.com/edit`, {
             method: 'POST',
             credentials: "include",
             body: formData
@@ -133,7 +133,7 @@ export const createCard = (postFormContent) => {
         formData.append('date', date);
 
 
-        fetch('http://localhost:5000/create', {
+        fetch('https://card-manager.herokuapp.com/create', {
             method: 'POST',
             credentials: "include",
             body: formData

@@ -48,7 +48,7 @@ export const getList = () => {
         dispatch(getListStarted());
 
 
-        fetch('http://localhost:5000/list', {
+        fetch('https://card-manager.herokuapp.com/list', {
             credentials: "include"
         })
             .then(res => res.json())
@@ -80,7 +80,7 @@ export const getListWithByTag = (tag) => {
         dispatch(getListStarted());
 
 
-        fetch(`http://localhost:5000/byTag/${tag}`, {
+        fetch(`https://card-manager.herokuapp.com/byTag/${tag}`, {
             credentials: "include"
         })
             .then(res => res.json())
@@ -103,7 +103,7 @@ export const getCard = (id) => {
         dispatch(getCardStarted());
 
 
-        fetch(`http://localhost:5000/card/${id}`, {
+        fetch(`https://card-manager.herokuapp.com/card/${id}`, {
             credentials: "include"
         })
             .then(res => res.json())
@@ -139,7 +139,7 @@ export const deleteCard = (id) => {
         dispatch(getCardStarted());
 
 
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://card-manager.herokuapp.com/delete/${id}`, {
             credentials: "include"
         })
             .then(res => res.text())

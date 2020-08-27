@@ -74,7 +74,7 @@ export const sendLogInForm = (userForm) => {
 
         //localhost:5000
 
-        fetch('http://localhost:5000/Login', {
+        fetch('https://card-manager.herokuapp.com/Login', {
             method: 'POST',
             credentials: "include",
             body: formData
@@ -107,7 +107,7 @@ export const sendRegistrationForm = (userForm) => {
         formData.append('passwordTwo', userForm.passwordTwo);
 
 
-        fetch('http://localhost:5000/Registration', {
+        fetch('https://card-manager.herokuapp.com/Registration', {
             method: 'POST',
             credentials: "include",
             body: formData
@@ -133,7 +133,7 @@ export const logOut = () => {
     return dispatch => {
 
 
-        fetch('http://localhost:5000/Logout', {
+        fetch('https://card-manager.herokuapp.com/Logout', {
             credentials: "include"
         })
             .then(res => res.text())
