@@ -74,7 +74,6 @@ export const sendLogInForm = (userForm) => {
 
         //localhost:5000
 
-        
         fetch('https://card-manager.herokuapp.com/Login', {
             method: 'POST',
             credentials: "include",
