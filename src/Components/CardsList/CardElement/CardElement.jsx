@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import classes from './CardElement.module.css';
-import { Row, Col, Card, Button } from 'react-bootstrap'
-import CardElementContainer from './CardElementContainer';
+import { Card, Button } from 'react-bootstrap'
 
 export default class CardElement extends React.Component {
 

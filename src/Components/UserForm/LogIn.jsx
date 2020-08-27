@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Form, Button, Col, Row } from 'react-bootstrap'
+import React from 'react'
+import { Form, Button, Col } from 'react-bootstrap'
 import './LogIn.css';
 
 export default class LogIn extends React.Component {

@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Form, Col, Row, Button } from 'react-bootstrap';
+import React from 'react'
+import { Form, Col, Button } from 'react-bootstrap';
 
 export default class Registration extends React.Component {
     render() {

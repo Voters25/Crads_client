@@ -1,8 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Container, Row, Col } from 'react-bootstrap';
-import { Route, Link, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import NavBarContainer from './Components/NavBar/NavBarContainer';
 import CardListContainer from './Components/CardsList/CardListContainer';
 import CardEditContainer from './Components/Card/CardEditContainer';

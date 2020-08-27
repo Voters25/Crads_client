@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import classes from './CardList.module.css';
-import { Row, Col, Card, Button } from 'react-bootstrap'
-import CardElementContainer from './CardElement/CardElementContainer';
+import { Row, Col, Button } from 'react-bootstrap'
 import CardElement from './CardElement/CardElement';
 import { TagElement } from './TagElement/TagElement';
 

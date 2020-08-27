@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 
 import history from './history';
 import store from './Redux/redux';
-import { Router, Route, BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import classes from './CardEdit.module.css';
-import { Row, Col, Card, FormGroup, FormControl, Button, Form } from 'react-bootstrap';
+import { Row, Card, FormGroup, FormControl, Button, Form } from 'react-bootstrap';
 
 export default class CardEdit extends React.Component {
     render() {

@@ -169,21 +169,21 @@ const reloadComponent = () => {
 }
 
 
-let changeCardList = (result) => {
+/* let changeCardList = (result) => {
     console.log(result);
     return {
         type: 'CHANGE-CARD-LIST',
         newList: result
     }
-}
+} */
 
-let changeTagList = (result) => {
+/* let changeTagList = (result) => {
     console.log(result);
     return {
         type: 'CHANGE-TAG-LIST',
         newTags: result
     }
-}
+} */
 
 let changeList = (result) => {
     return {
