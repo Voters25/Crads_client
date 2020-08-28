@@ -8,9 +8,6 @@ import CardEditContainer from './Components/Card/CardEditContainer';
 import LogInContainer from './Components/UserForm/LogInContainer';
 import RegistrationContainer from './Components/UserForm/Registration/RegistrationContainer';
 
-//import { Grid, Row, Col } from 'react-bootstrap';
-//import * as BootstrapComponents from 'react-bootstrap';
-
 
 
 function App() {
